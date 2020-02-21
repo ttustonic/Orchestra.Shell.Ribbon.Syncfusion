@@ -1,0 +1,169 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+<PropertyGroup>
+    <TargetFrameworks>net462;netcoreapp3.0</TargetFrameworks>
+    <AssemblyName>Orchestra.Examples.Ribbon.Syncfusion</AssemblyName>
+    <RootNamespace>Orchestra.Examples.Ribbon</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <SonarQubeExclude>true</SonarQubeExclude>
+  </PropertyGroup>
+  
+<PropertyGroup>
+    <UseWpf>true</UseWpf>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ExtrasEnableImplicitWpfReferences>true</ExtrasEnableImplicitWpfReferences>
+    <ExtrasEnableImplicitWinFormsReferences>true</ExtrasEnableImplicitWinFormsReferences>
+  </PropertyGroup>
+  
+<PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <StartupObject />
+    <NoWarn>$(NoWarn);SA1652</NoWarn>
+    <ApplicationIcon>Resources\Icons\Logo.ico</ApplicationIcon>
+    <Authors>ttustonic</Authors>
+    <Company>ttustonic</Company>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Catel.Fody" Version="4.3.0" PrivateAssets="all" />
+	<PackageReference Include="Catel.MVVM" Version="5.12.3" />	
+    <PackageReference Include="Fody" Version="6.1.0" PrivateAssets="all">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Orc.Controls" Version="3.3.2" />
+    <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="4.3.0" PrivateAssets="all" />
+    <PackageReference Include="ModuleInit.Fody" Version="2.1.0" PrivateAssets="all" />
+    <PackageReference Include="Obsolete.Fody" Version="5.2.0" PrivateAssets="all" />
+    <PackageReference Include="Syncfusion.SfRadialMenu.WPF" Version="17.4.0.49" />
+    <PackageReference Include="Syncfusion.Tools.WPF" Version="17.4.0.49" />
+  </ItemGroup>
+
+    <ItemGroup>
+    <PackageReference Update="NETStandard.Library" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Orchestra.Shell.Ribbon.Syncfusion\Orchestra.Shell.Ribbon.Syncfusion.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>  
+  
+<ItemGroup>
+  <None Remove="licence.txt" />
+  <None Remove="Resources\BlankPage32.png" />
+  <None Remove="Resources\Bold16.png" />
+  <None Remove="Resources\cancel.png" />
+  <None Remove="Resources\ClearFormatting16.png" />
+  <None Remove="Resources\Close32.png" />
+  <None Remove="Resources\Copy16.png" />
+  <None Remove="Resources\CoverPage32.png" />
+  <None Remove="Resources\Cut16.png" />
+  <None Remove="Resources\Exit.png" />
+  <None Remove="Resources\FontColor16.png" />
+  <None Remove="Resources\Fonts\fontawesome-webfont.ttf" />
+  <None Remove="Resources\FormatPainter16.png" />
+  <None Remove="Resources\GrowFont16.png" />
+  <None Remove="Resources\Images\CompanyLogo.png" />
+  <None Remove="Resources\Images\exit.png" />
+  <None Remove="Resources\Images\explorer.png" />
+  <None Remove="Resources\Images\file_menu.png" />
+  <None Remove="Resources\Images\keyboard.png" />
+  <None Remove="Resources\Images\open.png" />
+  <None Remove="Resources\Images\print.png" />
+  <None Remove="Resources\Images\refresh.png" />
+  <None Remove="Resources\Images\save.png" />
+  <None Remove="Resources\Italic16.png" />
+  <None Remove="Resources\Open32.png" />
+  <None Remove="Resources\Options.png" />
+  <None Remove="Resources\PageBreak32.png" />
+  <None Remove="Resources\Paste32.png" />
+  <None Remove="Resources\Picture32.png" />
+  <None Remove="Resources\protect.png" />
+  <None Remove="Resources\Save16.png" />
+  <None Remove="Resources\SaveAs32.png" />
+  <None Remove="Resources\ShrinkFont16.png" />
+  <None Remove="Resources\Strikethrough16.png" />
+  <None Remove="Resources\Subscript16.png" />
+  <None Remove="Resources\Superscript16.png" />
+  <None Remove="Resources\temp.rtf" />
+  <None Remove="Resources\TextHighlightColor16.png" />
+  <None Remove="Resources\Underline16.png" />
+  <None Remove="SampleImages\2.png" />
+  <None Remove="SampleImages\Backstage.jpg" />
+  <None Remove="SampleImages\Backstageblack.jpg" />
+  <None Remove="SampleImages\Backstagesilver.jpg" />
+  <None Remove="SampleImages\help.png" />
+  <None Remove="SampleImages\return.jpg" />
+  <None Remove="SampleImages\start.png" />
+</ItemGroup>
+  
+  <ItemGroup>
+    <Resource Include="Resources\BlankPage32.png" />
+    <Resource Include="Resources\Bold16.png" />
+    <Resource Include="Resources\cancel.png" />
+    <Resource Include="Resources\ClearFormatting16.png" />
+    <Resource Include="Resources\Close32.png" />
+    <Resource Include="Resources\Copy16.png" />
+    <Resource Include="Resources\CoverPage32.png" />
+    <Resource Include="Resources\Cut16.png" />
+    <Resource Include="Resources\Exit.png" />
+    <Resource Include="Resources\FontColor16.png" />
+    <Resource Include="Resources\Fonts\fontawesome-webfont.ttf" />
+    <Resource Include="Resources\FormatPainter16.png" />
+    <Resource Include="Resources\GrowFont16.png" />
+    <Resource Include="Resources\Images\CompanyLogo.png" />
+    <Resource Include="Resources\Images\exit.png" />
+    <Resource Include="Resources\Images\explorer.png" />
+    <Resource Include="Resources\Images\file_menu.png" />
+    <Resource Include="Resources\Images\keyboard.png" />
+    <Resource Include="Resources\Images\open.png" />
+    <Resource Include="Resources\Images\print.png" />
+    <Resource Include="Resources\Images\refresh.png" />
+    <Resource Include="Resources\Images\save.png" />
+    <Resource Include="Resources\Italic16.png" />
+    <Resource Include="Resources\Open32.png" />
+    <Resource Include="Resources\Options.png" />
+    <Resource Include="Resources\PageBreak32.png" />
+    <Resource Include="Resources\Paste32.png" />
+    <Resource Include="Resources\Picture32.png" />
+    <Resource Include="Resources\protect.png" />
+    <Resource Include="Resources\Save16.png" />
+    <Resource Include="Resources\SaveAs32.png" />
+    <Resource Include="Resources\ShrinkFont16.png" />
+    <Resource Include="Resources\Strikethrough16.png" />
+    <Resource Include="Resources\Subscript16.png" />
+    <Resource Include="Resources\Superscript16.png" />
+    <Resource Include="Resources\temp.rtf" />
+    <Resource Include="Resources\TextHighlightColor16.png" />
+    <Resource Include="Resources\Underline16.png" />
+    <Resource Include="SampleImages\2.png" />
+    <Resource Include="SampleImages\Backstage.jpg" />
+    <Resource Include="SampleImages\Backstageblack.jpg" />
+    <Resource Include="SampleImages\Backstagesilver.jpg" />
+    <Resource Include="SampleImages\help.png" />
+    <Resource Include="SampleImages\return.jpg" />
+    <Resource Include="SampleImages\start.png" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+  </ItemGroup>
+
+</Project>

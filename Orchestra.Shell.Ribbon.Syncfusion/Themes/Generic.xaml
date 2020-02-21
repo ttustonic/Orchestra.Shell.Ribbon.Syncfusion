@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:orccontrols="http://schemas.wildgums.com/orc/controls"                    
+                    xmlns:sf="http://schemas.syncfusion.com/wpf"
+                    >
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Orchestra.Shell.Ribbon.Syncfusion;component/Themes/Ribbon.xaml"/>
+        <!--
+        This interferes with Orchestra controls
+        <ResourceDictionary Source="/Orchestra.Shell.Ribbon.Syncfusion;component/Themes/MSControl.xaml"/>-->
+        <ResourceDictionary Source="/Orchestra.Shell.Ribbon.Syncfusion;component/Themes/Colors.xaml"/>
+        <ResourceDictionary Source="/Orchestra.Shell.Ribbon.Syncfusion;component/Themes/SyncfusionControls.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="{x:Type StatusBar}" TargetType="{x:Type StatusBar}">
+        <Setter Property="Margin" Value="0,0,8,0" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type StatusBar}">
+                    <Border BorderThickness="0,1">
+                        <Border Height="Auto" BorderThickness="0,1" 
+                                Background="{orccontrols:ThemeColorBrush ThemeColorStyle=BackgroundColor}">
+                            <!--Background="{DynamicResource Fluent.Ribbon.Brushes.Ribbon.Background}"-->
+                            <ItemsPresenter Height="Auto" />
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
