@@ -37,16 +37,19 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Catel.Core" Version="5.12.3" />
+    <PackageReference Include="Catel.Core" Version="5.12.5" />
     <PackageReference Include="Catel.Fody" Version="4.3.0" />
-    <PackageReference Include="Catel.MVVM" Version="5.12.3" />
-    <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="4.3.0" />
+    <PackageReference Include="Catel.MVVM" Version="5.12.5" />
+    <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="4.4.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="MethodTimer.Fody" Version="3.1.2" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.19" />
     <PackageReference Include="ModuleInit.Fody" Version="2.1.0" />
-    <PackageReference Include="Obsolete.Fody" Version="5.2.0" />
+    <PackageReference Include="Obsolete.Fody" Version="5.2.1" />
     <PackageReference Include="Orchestra.Core" Version="5.3.1" />
-    <PackageReference Include="Syncfusion.Tools.WPF" Version="17.4.0.49" />
+    <PackageReference Include="Syncfusion.Tools.WPF" Version="18.1.0.48" />
   </ItemGroup>
   
   <ItemGroup>

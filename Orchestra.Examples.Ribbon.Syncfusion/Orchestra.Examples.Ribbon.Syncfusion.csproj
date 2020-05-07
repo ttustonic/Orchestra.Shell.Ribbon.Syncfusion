@@ -26,16 +26,16 @@
   
   <ItemGroup>
     <PackageReference Include="Catel.Fody" Version="4.3.0" PrivateAssets="all" />
-	<PackageReference Include="Catel.MVVM" Version="5.12.3" />	
-    <PackageReference Include="Fody" Version="6.1.0" PrivateAssets="all">
+	<PackageReference Include="Catel.MVVM" Version="5.12.5" />	
+    <PackageReference Include="Fody" Version="6.1.1" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Orc.Controls" Version="3.3.2" />
-    <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="4.3.0" PrivateAssets="all" />
+    <PackageReference Include="Orc.Controls" Version="3.4.0" />
+    <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="4.4.0" PrivateAssets="all" />
     <PackageReference Include="ModuleInit.Fody" Version="2.1.0" PrivateAssets="all" />
-    <PackageReference Include="Obsolete.Fody" Version="5.2.0" PrivateAssets="all" />
-    <PackageReference Include="Syncfusion.SfRadialMenu.WPF" Version="17.4.0.49" />
-    <PackageReference Include="Syncfusion.Tools.WPF" Version="17.4.0.49" />
+    <PackageReference Include="Obsolete.Fody" Version="5.2.1" PrivateAssets="all" />
+    <PackageReference Include="Syncfusion.SfRadialMenu.WPF" Version="18.1.0.48" />
+    <PackageReference Include="Syncfusion.Tools.WPF" Version="18.1.0.48" />
   </ItemGroup>
 
     <ItemGroup>
