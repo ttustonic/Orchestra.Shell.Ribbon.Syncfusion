@@ -3,6 +3,7 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:windows="clr-namespace:Orchestra.Windows"
                       xmlns:orccontrols="http://schemas.wildgums.com/orc/controls"
+                      xmlns:orctheme="http://schemas.wildgums.com/orc/theming"
                       ShowInTaskbar="True" ResizeMode="CanResize" WindowState="Maximized"
                       IsGlassActive="False"
                       Title="{Binding ElementName=ribbonContentControl, Path=Content.ViewModel.Title}"
@@ -34,7 +35,8 @@
             <ProgressBar.Style>
                 <Style TargetType="{x:Type ProgressBar}">
                     <Setter Property="Margin" Value="0"/>
-                    <Setter Property="Foreground" Value="{orccontrols:ThemeColorBrush ThemeColorStyle=AccentColor}"/>
+                    <!--<Setter Property="Foreground" Value="{orctheme:ThemeColorBrush ThemeColorStyle=AccentColor}"/>-->
+                    <Setter Property="Foreground" Value="{DynamicResource Orc.Brushes.AccentColorBrush}"/>
                     <!--<Setter Property="Foreground" Value="DarkMagenta" />-->
                     <Setter Property="Background" Value="Transparent"/>
                     <Setter Property="BorderThickness" Value="0"/>

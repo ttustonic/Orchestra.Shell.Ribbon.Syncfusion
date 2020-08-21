@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
 <PropertyGroup>
-    <TargetFrameworks>net462;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>net462;netcoreapp3.1</TargetFrameworks>
     <AssemblyName>Orchestra.Examples.Ribbon.Syncfusion</AssemblyName>
     <RootNamespace>Orchestra.Examples.Ribbon</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
@@ -25,17 +25,18 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Catel.Fody" Version="4.3.0" PrivateAssets="all" />
-	<PackageReference Include="Catel.MVVM" Version="5.12.5" />	
-    <PackageReference Include="Fody" Version="6.1.1" PrivateAssets="all">
+    <PackageReference Include="Catel.Fody" Version="4.5.0" PrivateAssets="all" />
+	<PackageReference Include="Catel.MVVM" Version="5.12.8" />	
+    <PackageReference Include="Fody" Version="6.2.4" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Orc.Controls" Version="3.4.0" />
-    <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="4.4.0" PrivateAssets="all" />
+    <PackageReference Include="Orc.Controls" Version="4.0.5" />
+    <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="4.5.0" PrivateAssets="all" />
     <PackageReference Include="ModuleInit.Fody" Version="2.1.0" PrivateAssets="all" />
     <PackageReference Include="Obsolete.Fody" Version="5.2.1" PrivateAssets="all" />
-    <PackageReference Include="Syncfusion.SfRadialMenu.WPF" Version="18.1.0.48" />
-    <PackageReference Include="Syncfusion.Tools.WPF" Version="18.1.0.48" />
+    <PackageReference Include="Orc.Theming" Version="4.0.2" />
+    <PackageReference Include="Syncfusion.SfRadialMenu.WPF" Version="18.2.0.54" />
+    <PackageReference Include="Syncfusion.Tools.WPF" Version="18.2.0.54" />
   </ItemGroup>
 
     <ItemGroup>
@@ -160,10 +161,6 @@
   
   <ItemGroup>
     <Folder Include="Properties\" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Reference Include="PresentationFramework.Aero" />
   </ItemGroup>
 
 </Project>

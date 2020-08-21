@@ -5,9 +5,6 @@
                     xmlns:shared="clr-namespace:Syncfusion.Windows.Shared;assembly=Syncfusion.Shared.WPF"
                     xmlns:shared_windows="clr-namespace:Syncfusion.Windows;assembly=Syncfusion.Shared.WPF"
                     xmlns:tools_resources="clr-namespace:Syncfusion.Windows.Tools.Controls.Resources;assembly=Syncfusion.Tools.WPF"
-                                        
-                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                    xmlns:c="netcoreapp"                    
                     >
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Orchestra.Shell.Ribbon.Syncfusion;component/Themes/Colors.xaml"/>

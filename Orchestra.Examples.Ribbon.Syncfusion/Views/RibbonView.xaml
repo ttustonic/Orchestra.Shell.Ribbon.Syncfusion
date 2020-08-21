@@ -6,6 +6,7 @@
                    xmlns:sf="http://schemas.syncfusion.com/wpf"
                    xmlns:ribbonexample="clr-namespace:Orchestra.Examples.Ribbon"
                    xmlns:orchestra="http://schemas.wildgums.com/orchestra"
+                   xmlns:orctheme="http://schemas.wildgums.com/orc/theming"
                    xmlns:orccontrols="clr-namespace:Orc.Controls;assembly=Orc.Controls">
 
     <catel:UserControl.Resources>
@@ -513,32 +514,32 @@
             <sf:RibbonTab Caption="View">
                 <sf:RibbonBar Header="Workspace">
                     <sf:RibbonButton Label="Refresh" SizeForm="Large"
-                                     SmallIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Refresh}}"
-                                     LargeIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Refresh}}"
+                                     SmallIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Refresh}}"
+                                     LargeIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Refresh}}"
                                      Command="{Binding RefreshWorkspace}"/>
                 </sf:RibbonBar>
 
                 <sf:RibbonBar Header="Demo group">
                     <sf:RibbonButton Label="Windows" SizeForm="Large"
-                                     SmallIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Windows}}"
-                                     LargeIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Windows}}"/>
+                                     SmallIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Windows}}"
+                                     LargeIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Windows}}"/>
 
                     <sf:RibbonButton Label="Progress demo" SizeForm="Large"
-                                     SmallIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Play}}"
-                                     LargeIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Play}}"
+                                     SmallIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Play}}"
+                                     LargeIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Play}}"
                                      Command="{catel:CommandManagerBinding Demo.LongOperation}"
                                      />
 
                     <sf:SplitButton Label="Message box demo" SizeForm="Large" 
-                                    SmallIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Send}}"
-                                    LargeIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Send}}"
+                                    SmallIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Send}}"
+                                    LargeIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Send}}"
                                     >
                         <sf:DropDownMenuGroup>
                             <sf:DropDownMenuItem Header="Ok"
                                                  Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
                                                  CommandParameter="{x:Static services:MessageButton.OK}">
                                 <sf:DropDownMenuItem.Icon>
-                                    <Image Source="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Send}}"/>
+                                    <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Send}}"/>
                                 </sf:DropDownMenuItem.Icon>
                             </sf:DropDownMenuItem>
 
@@ -546,7 +547,7 @@
                                                  Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
                                                  CommandParameter="{x:Static services:MessageButton.YesNo}">
                                 <sf:DropDownMenuItem.Icon>
-                                    <Image Source="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Send}}"/>
+                                    <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Send}}"/>
                                 </sf:DropDownMenuItem.Icon>
                             </sf:DropDownMenuItem>
 
@@ -554,7 +555,7 @@
                                                  Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
                                                  CommandParameter="{x:Static services:MessageButton.OK}">
                                 <sf:DropDownMenuItem.Icon>
-                                    <Image Source="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Send}}"/>
+                                    <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Send}}"/>
                                 </sf:DropDownMenuItem.Icon>
                             </sf:DropDownMenuItem>
 
@@ -562,7 +563,7 @@
                                                  Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
                                                  CommandParameter="{x:Static services:MessageButton.YesNoCancel}">
                                 <sf:DropDownMenuItem.Icon>
-                                    <Image Source="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Send}}"/>
+                                    <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Send}}"/>
                                 </sf:DropDownMenuItem.Icon>
                             </sf:DropDownMenuItem>
 
@@ -570,7 +571,7 @@
                                                  Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
                                                  CommandParameter="{x:Static services:MessageImage.Stop}">
                                 <sf:DropDownMenuItem.Icon>
-                                    <Image Source="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Stop}}"/>
+                                    <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Stop}}"/>
                                 </sf:DropDownMenuItem.Icon>
                             </sf:DropDownMenuItem>
 
@@ -578,7 +579,7 @@
                                                  Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
                                                  CommandParameter="{x:Static services:MessageImage.Exclamation}">
                                 <sf:DropDownMenuItem.Icon>
-                                    <Image Source="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Exclamation }}"/>
+                                    <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Exclamation }}"/>
                                 </sf:DropDownMenuItem.Icon>
                             </sf:DropDownMenuItem>
 
@@ -586,7 +587,7 @@
                                                  Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
                                                  CommandParameter="{x:Static services:MessageImage.Error}">
                                 <sf:DropDownMenuItem.Icon>
-                                    <Image Source="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.TimesCircle  }}"/>
+                                    <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.TimesCircle  }}"/>
                                 </sf:DropDownMenuItem.Icon>
                             </sf:DropDownMenuItem>
 
@@ -594,7 +595,7 @@
                                                  Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
                                                  CommandParameter="{x:Static services:MessageImage.Warning}">
                                 <sf:DropDownMenuItem.Icon>
-                                    <Image Source="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Warning}}"/>
+                                    <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Warning}}"/>
                                 </sf:DropDownMenuItem.Icon>
                             </sf:DropDownMenuItem>
 
@@ -602,7 +603,7 @@
                                                  Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
                                                  CommandParameter="{x:Static services:MessageImage.Information}">
                                 <sf:DropDownMenuItem.Icon>
-                                    <Image Source="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Info}}"/>
+                                    <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Info}}"/>
                                 </sf:DropDownMenuItem.Icon>
                             </sf:DropDownMenuItem>
 
@@ -610,7 +611,7 @@
                                                  Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
                                                  CommandParameter="{x:Static services:MessageImage.Question}">
                                 <sf:DropDownMenuItem.Icon>
-                                    <Image Source="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Question}}"/>
+                                    <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Question}}"/>
                                 </sf:DropDownMenuItem.Icon>
                             </sf:DropDownMenuItem>
 
@@ -618,33 +619,33 @@
                     </sf:SplitButton>
 
                     <sf:RibbonToggleButton Label="Toggle button" SizeMode="Large"
-                                           LargeIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Arrows}}"/>
+                                           LargeIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Arrows}}"/>
                 </sf:RibbonBar>
 
                 <sf:RibbonBar Header="Keyboard">
                     <sf:SplitButton Label="Shortcuts" SizeForm="Large"
-                                    SmallIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.KeyboardO}}"
-                                    LargeIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.KeyboardO}}"
+                                    SmallIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.KeyboardO}}"
+                                    LargeIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.KeyboardO}}"
                                     Command="{Binding ShowKeyboardMappings}" />
                 </sf:RibbonBar>
 
                 <sf:RibbonBar Header="">
                     <sf:SplitButton Label="Grid" SizeForm="Large"
-                                    LargeIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Mobile}}"
-                                    SmallIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Mobile}}"
+                                    LargeIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Mobile}}"
+                                    SmallIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Mobile}}"
                                     HorizontalContentAlignment="Stretch"
                                     IconType="VectorImage"
                                     >
                         <sf:DropDownMenuGroup>
                             <sf:RibbonToggleButton Label="Windows" SizeMode="Normal" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
-                                                   LargeIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Windows}}"
-                                                   SmallIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Windows}}"
+                                                   LargeIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Windows}}"
+                                                   SmallIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Windows}}"
                                                    IsCheckable="True"
                                                    IsChecked="{Binding Settings.IsShowVerticalGridLines}"/>
 
                             <sf:RibbonToggleButton Label="Apple" SizeMode="Normal" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
-                                                   LargeIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Apple}}"
-                                                   SmallIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Apple}}"
+                                                   LargeIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Apple}}"
+                                                   SmallIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Apple}}"
                                                    IsCheckable="True"
                                                    IsChecked="{Binding Settings.IsShowVerticalGridLines}"/>
                         </sf:DropDownMenuGroup>

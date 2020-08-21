@@ -26,6 +26,8 @@ namespace Orchestra
         {
             name ??= GenerateThemeName(baseColorScheme, accentBaseColor, highlightColor);
 
+            var pbck = Application.Current.Resources["PrimaryBackground"] ;
+            
             var textColor = Colors.Black;
             var accentBaseBrush = accentBaseColor.ToBrush();
             var accentBrush80 = Color.FromArgb(204, accentBaseColor.R, accentBaseColor.G, accentBaseColor.B).ToBrush();
@@ -47,8 +49,15 @@ namespace Orchestra
             Application.Current.Resources["HoverBorderBrush"] = accentBaseBrush ;
 
             Application.Current.Resources["ActiveForegroundBrush"] = IdealTextColor(accentBaseColor).ToBrush() ;
-//            Application.Current.Resources["HoverForegroundBrush"] = Colors.White.ToBrush();
-//            Application.Current.Resources["HoverGlyphBrush"] = Colors.Pink.ToBrush();
+            //            Application.Current.Resources["HoverForegroundBrush"] = Colors.White.ToBrush();
+            //            Application.Current.Resources["HoverGlyphBrush"] = Colors.Pink.ToBrush();
+
+            Application.Current.Resources["PrimaryBackground"] = accentBaseBrush;
+            Application.Current.Resources["PrimaryBackgroundOpacity"] = accentBrush20;
+            Application.Current.Resources["PrimaryBackgroundOpacity2"] = accentBrush40;
+            Application.Current.Resources["PrimaryBackgroundOpacity3"] = accentBrush60;
+
+
             return new Tuple<string, ResourceDictionary>(null, null);
         }
 

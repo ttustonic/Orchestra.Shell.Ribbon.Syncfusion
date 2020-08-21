@@ -17,7 +17,9 @@ namespace Orchestra.Services
     using Catel.Reflection;
     using Catel.Services;
     using MethodTimer;
+    using Orc.Theming;
     using Orchestra.Themes;
+    using Orchestra.Theming;
     using Views;
 
     public partial class ShellService : IShellService

@@ -5,6 +5,7 @@
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     xmlns:converters="http://schemas.wildgums.com/orchestra"
                     xmlns:orccontrols="http://schemas.wildgums.com/orc/controls"
+                    xmlns:orctheme="http://schemas.wildgums.com/orc/theming"
                     xmlns:sf="http://schemas.syncfusion.com/wpf"
                     mc:Ignorable="d">
 
@@ -57,7 +58,7 @@
 
     <ControlTemplate x:Key="RibbonBackstageButtonControlTemplate" TargetType="{x:Type orchestra:RibbonBackstageButton}">
         <Grid x:Name="grid">
-            <Border x:Name="border" BorderThickness="{TemplateBinding ShowBorder, Converter={converters:BooleanToThicknessConverter}}" Margin="0" Background="Transparent" BorderBrush="{orccontrols:ThemeColorBrush ThemeColorStyle=BorderColor}">
+            <Border x:Name="border" BorderThickness="{TemplateBinding ShowBorder, Converter={converters:BooleanToThicknessConverter}}" Margin="0" Background="Transparent" BorderBrush="{orctheme:ThemeColorBrush ThemeColorStyle=BorderColor}">
                 <ContentPresenter x:Name="contentPresenter" ContentSource="Content" SnapsToDevicePixels="True"/>
             </Border>
         </Grid>

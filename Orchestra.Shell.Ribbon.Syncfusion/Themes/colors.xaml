@@ -2,7 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     >
 
-<LinearGradientBrush x:Key="BackgroundBrush" StartPoint="0,0" EndPoint="1,1" ><GradientStop Color="#FFECECEC" Offset="0" /><GradientStop Color="#FFECECEC" Offset="1" /></LinearGradientBrush>
+<!--<LinearGradientBrush x:Key="BackgroundBrush" StartPoint="0,0" EndPoint="1,1" ><GradientStop Color="#FFECECEC" Offset="0" /><GradientStop Color="#FFECECEC" Offset="1" /></LinearGradientBrush>-->
+
+    <SolidColorBrush x:Key="BackgroundBrush" Color="#FFECECEC" />
+
     <SolidColorBrush x:Key="BorderBrush" Color="#FFC8C8C8" />
 	<SolidColorBrush x:Key="ForegroundBrush" Color="#FF333333" />
 	<SolidColorBrush x:Key="GlyphBrush" Color="#FF686969" />
@@ -16,10 +19,14 @@
 	<SolidColorBrush x:Key="HoverForegroundBrush" Color="#FF282827" />
 	<SolidColorBrush x:Key="HoverGlyphBrush" Color="#FF282827" />
     
-<LinearGradientBrush x:Key="ActiveBackgroundBrush" StartPoint="0,0" EndPoint="1,1" >
+<!--<LinearGradientBrush x:Key="ActiveBackgroundBrush" StartPoint="0,0" EndPoint="1,1" >
     <GradientStop Color="#FF179BD7" Offset="0" />
     <GradientStop Color="#FF179BD7" Offset="1" />
-</LinearGradientBrush>
+</LinearGradientBrush>-->
+
+    <!--<SolidColorBrush x:Key="ActiveBackgroundBrush" Color="#FF179BD7" />-->
+    <SolidColorBrush x:Key="ActiveBackgroundBrush" Color="Red" />
+
     <SolidColorBrush x:Key="ActiveBorderBrush" Color="#FFC8C8C8" />
 	<SolidColorBrush x:Key="ActiveForegroundBrush" Color="#FFFFFFFF" />
 	<SolidColorBrush x:Key="ActiveGlyphBrush" Color="#FFFFFFFF" />
