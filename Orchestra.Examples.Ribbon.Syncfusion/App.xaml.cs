@@ -1,11 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="App.xaml.cs" company="WildGums">
-//   Copyright (c) 2008 - 2014 WildGums. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Orchestra.Examples.Ribbon
+﻿namespace Orchestra.Examples.Ribbon
 {
     using System;
     using System.Diagnostics;
@@ -37,7 +30,7 @@ namespace Orchestra.Examples.Ribbon
         {
             _stopwatch = new Stopwatch();
             _stopwatch.Start();
-//            SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE HERE");
+            SyncfusionLicenseProvider.RegisterLicense("NDI4ODk0QDMxMzkyZTMxMmUzMGZucmh5dGF3eUZQekR0d1I5N3RhcWpueWFZVHY3aEhPUWZLQ3liRFdTSDg9");
         }
         #endregion
 
@@ -61,11 +54,6 @@ namespace Orchestra.Examples.Ribbon
                 "./#FontAwesome"));
             Orc.Theming.FontImage.DefaultFontFamily = "FontAwesome";
 
-            //Orc.Controls.FontImage.RegisterFont("FontAwesome", 
-            //    new FontFamily(new Uri("pack://application:,,,/Orchestra.Examples.Ribbon.Syncfusion;component/Resources/Fonts/", UriKind.RelativeOrAbsolute), 
-            //    "./#FontAwesome"));
-            //Orc.Controls.FontImage.DefaultFontFamily = "FontAwesome";
-
             var serviceLocator = ServiceLocator.Default;
             var shellService = serviceLocator.ResolveType<IShellService>();
             shellService.CreateAsync<ShellWindow>();
@@ -73,7 +61,6 @@ namespace Orchestra.Examples.Ribbon
             _stopwatch.Stop();
 
             Log.Info("Elapsed startup stopwatch time: {0}", _stopwatch.Elapsed);
-
         }
         #endregion
     }

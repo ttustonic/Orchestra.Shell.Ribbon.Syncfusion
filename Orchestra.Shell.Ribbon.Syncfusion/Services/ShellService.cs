@@ -18,11 +18,10 @@ namespace Orchestra.Services
     using Catel.Services;
     using MethodTimer;
     using Orc.Theming;
-    using Orchestra.Themes;
     using Orchestra.Theming;
     using Views;
 
-    public partial class ShellService : IShellService
+    public partial class ShellService: IShellService
     {
         #region Fields
         /// <summary>
@@ -100,20 +99,6 @@ namespace Orchestra.Services
         #endregion
 
         #region Methods
-        /// <summary>
-        /// Creates a new shell and shows a splash during the initialization.
-        /// </summary>
-        /// <typeparam name="TShell">The type of the shell.</typeparam>
-        /// <returns>The created shell.</returns>
-        /// <exception cref="OrchestraException">The shell is already created and cannot be created again.</exception>
-        [ObsoleteEx(Message = "App is now constructed with splash by default. Splash can be hidden by using ShowSplash = false", TreatAsErrorFromVersion = "5.0", RemoveInVersion = "6.0")]
-        [Time]
-        public Task<TShell> CreateWithSplashAsync<TShell>()
-            where TShell : class, IShell
-        {
-            return CreateAsync<TShell>();
-        }
-
         /// <summary>
         /// Creates a new shell.
         /// </summary>
@@ -239,15 +224,13 @@ namespace Orchestra.Services
         private async Task InitializeAfterCreatingShellAsync()
         {
             Log.Debug("Calling IApplicationInitializationService.InitializeAfterCreatingShell");
-
             await _applicationInitializationService.InitializeAfterCreatingShellAsync();
         }
 
         partial void OnCreatingShell();
 
         [Time]
-        private async Task<TShell> CreateShellAsync<TShell>()
-            where TShell : IShell
+        private Task<TShell> CreateShellAsync<TShell>() where TShell : IShell
         {
             Log.Debug("Creating shell using type '{0}'", typeof(TShell).GetSafeFullName(false));
 
@@ -265,7 +248,6 @@ namespace Orchestra.Services
 
                 // Register so it stays alive and can subscribe to events
                 _serviceLocator.RegisterInstance(instance);
-
                 instance.ApplyTheme(themeInfo);
             }
 
@@ -287,10 +269,12 @@ namespace Orchestra.Services
 
             OnCreatedShell();
 
-            return shell;
+            return Task.FromResult(shell);
         }
 
-        partial void OnCreatedShell();
+        void OnCreatedShell()
+        {
+        }
 
         [Time]
         private void ShowShell(IShell shell)

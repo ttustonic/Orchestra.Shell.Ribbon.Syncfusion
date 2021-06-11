@@ -37,10 +37,6 @@ namespace Orchestra.Windows
         /// <param name="viewModel">The view model.</param>
         public RibbonWindow(IViewModel viewModel)
         {
-            Style style = Application.Current.FindResource("Office2013RibbonWindowStyle") as Style;
-//            this.Style = style;
-            SetResourceReference(StyleProperty, "Office2013RibbonWindowStyle");
-
             _logic = new WindowLogic(this, null, viewModel);
             _logic.ViewModelChanged += (sender, e) => ViewModelChanged?.Invoke(this, e);
             _logic.PropertyChanged += (sender, e) => PropertyChanged?.Invoke(this, e);
@@ -121,9 +117,10 @@ namespace Orchestra.Windows
             }
         }
 
-        private async Task ViewModelClosedAsync(object sender, ViewModelClosedEventArgs e)
+        private Task ViewModelClosedAsync(object sender, ViewModelClosedEventArgs e)
         {
             Close();
+            return Task.CompletedTask;
         }
         #endregion
     }

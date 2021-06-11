@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orchestra.Shell.Ribbon.Syncfusion", "Orchestra.Shell.Ribbon.Syncfusion\Orchestra.Shell.Ribbon.Syncfusion.csproj", "{9D31C636-9440-4DC4-AF08-97C8EC4B957F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orchestra.Examples.Ribbon.Syncfusion", "Orchestra.Examples.Ribbon.Syncfusion\Orchestra.Examples.Ribbon.Syncfusion.csproj", "{EA0CDD76-CF05-4394-AB66-5682E9657E1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orchestra.Examples.Ribbon.Syncfusion", "Orchestra.Examples.Ribbon.Syncfusion\Orchestra.Examples.Ribbon.Syncfusion.csproj", "{EA0CDD76-CF05-4394-AB66-5682E9657E1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

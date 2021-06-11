@@ -11,24 +11,26 @@ namespace Orchestra.Views
     using Catel.IoC;
     using Catel.Windows;
     using Services;
+    using Syncfusion.SfSkinManager;
+    using Syncfusion.Windows.Tools.Controls;
 
     /// <summary>
     /// Interaction logic for ShellWindow.xaml.
     /// </summary>
-    public partial class ShellWindow : IShell
+    public partial class ShellWindow: IShell
     {
+        IServiceLocator _serviceLocator;
         /// <summary>
         /// Initializes a new instance of the <see cref="ShellWindow"/> class.
         /// </summary>
         public ShellWindow()
         {
-            var serviceLocator = ServiceLocator.Default;
-
+            _serviceLocator = ServiceLocator.Default;
             InitializeComponent();
+            SfSkinManager.SetTheme(this, new Theme(SyncfusionThemeConfig.ApplicationTheme));
+            _serviceLocator.RegisterInstance(pleaseWaitProgressBar, "pleaseWaitService");
 
-            serviceLocator.RegisterInstance(pleaseWaitProgressBar, "pleaseWaitService");
-
-            var statusService = serviceLocator.ResolveType<IStatusService>();
+            var statusService = _serviceLocator.ResolveType<IStatusService>();
             statusService.Initialize(statusTextBlock);
 
             var dependencyResolver = this.GetDependencyResolver();
@@ -39,10 +41,10 @@ namespace Orchestra.Views
             {
                 ribbonContentControl.SetCurrentValue(ContentProperty, ribbonContent);
 
-                var ribbon = ribbonContent.FindVisualDescendantByType<Syncfusion.Windows.Tools.Controls.Ribbon>();
+                var ribbon = ribbonContent.FindVisualDescendantByType<Ribbon>();
                 if (ribbon != null)
                 {
-                    serviceLocator.RegisterInstance<Syncfusion.Windows.Tools.Controls.Ribbon>(ribbon);                    
+                    _serviceLocator.RegisterInstance(ribbon);
                 }
             }
 

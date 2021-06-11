@@ -8,7 +8,6 @@
 namespace Orchestra.Examples.Ribbon.Services
 {
     using System;
-    using System.Threading;
     using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Input;
@@ -49,9 +48,10 @@ namespace Orchestra.Examples.Ribbon.Services
             {
                 InitializePerformanceAsync
             });
+            await base.InitializeBeforeCreatingShellAsync();
         }
 
-        private async Task InitializeCommandsAsync()
+        private Task InitializeCommandsAsync()
         {
             var commandManager = ServiceLocator.Default.ResolveType<ICommandManager>();
             var commandInfoService = ServiceLocator.Default.ResolveType<ICommandInfoService>();
@@ -70,41 +70,36 @@ namespace Orchestra.Examples.Ribbon.Services
 
             var keyboardMappingsService = _serviceLocator.ResolveType<IKeyboardMappingsService>();
             keyboardMappingsService.AdditionalKeyboardMappings.Add(new KeyboardMapping("MyGroup.Zoom", "Mousewheel", ModifierKeys.Control));
+
+            return Task.CompletedTask;
         }
 
-        public override async Task InitializeAfterCreatingShellAsync()
+        public override Task InitializeAfterCreatingShellAsync()
         {
             Log.Info("Delay to show the splash screen");
-
-            Thread.Sleep(2500);
+            return base.InitializeAfterCreatingShellAsync();
         }
 
         public override Task InitializeAfterShowingShellAsync()
         {
             var w = Application.Current.MainWindow;
-            //            SkinStorage.SetVisualStyle(w, "Metro");
-            //var brush = new SolidColorBrush(Colors.DarkOrange);          
-            //SkinManager.SetActiveColorScheme(w, brush);
-            //var act = SkinManager.GetActiveColorScheme(w);
-
             return base.InitializeAfterShowingShellAsync();
         }
 
-        private async Task InitializePerformanceAsync()
+        private Task InitializePerformanceAsync()
         {
             Log.Info("Improving performance");
 
             Catel.Windows.Controls.UserControl.DefaultCreateWarningAndErrorValidatorForViewModelValue = false;
             Catel.Windows.Controls.UserControl.DefaultSkipSearchingForInfoBarMessageControlValue = true;
+            return Task.CompletedTask;
         }
 
-        private async Task RegisterTypesAsync()
+        private Task RegisterTypesAsync()
         {
             var serviceLocator = _serviceLocator;
-
             serviceLocator.RegisterType<IAboutInfoService, AboutInfoService>();
-
-            //throw new Exception("this is a test exception");
+            return Task.CompletedTask;
         }
     }
 }

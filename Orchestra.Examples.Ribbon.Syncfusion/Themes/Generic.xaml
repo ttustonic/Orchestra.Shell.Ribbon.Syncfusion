@@ -1,7 +1,17 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sfskin="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+                    xmlns:sforc="clr-namespace:Orchestra;assembly=Orchestra.Shell.Ribbon.Syncfusion"
+                    >
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Orchestra.Examples.Ribbon.Syncfusion;component/Themes/DockingManager.xaml"/>
-        <ResourceDictionary Source="/Orchestra.Examples.Ribbon.Syncfusion;component/Themes/SfRadialMenu.xaml"/>
+<!-- Add this for controls not in default SF dictionaries:
+    Common, Brushes, Ribbon, RIbbonWindow, DockingManager
+-->
+        <sfskin:ResourceDictionaryProvider DictionaryName="SfCircularGauge"
+                                           ThemeName="{x:Static sforc:SyncfusionThemeConfig.ApplicationThemeName}" />
+        <sfskin:ResourceDictionaryProvider DictionaryName="SfLinearGauge"
+                                           ThemeName="{x:Static sforc:SyncfusionThemeConfig.ApplicationThemeName}" />
+        <sfskin:ResourceDictionaryProvider DictionaryName="SfDigitalGauge"
+                                           ThemeName="{x:Static sforc:SyncfusionThemeConfig.ApplicationThemeName}" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

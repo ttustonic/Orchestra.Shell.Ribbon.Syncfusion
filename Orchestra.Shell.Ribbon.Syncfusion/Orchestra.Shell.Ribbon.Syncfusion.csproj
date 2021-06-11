@@ -1,23 +1,23 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
 
   <PropertyGroup>
-    <TargetFrameworks>net462;net472;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net462;net472;netcoreapp3.1;net5.0-windows</TargetFrameworks>
     <AssemblyName>Orchestra.Shell.Ribbon.Syncfusion</AssemblyName>
     <RootNamespace>Orchestra</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageId>Orchestra.Shell.Ribbon.Syncfusion</PackageId>
-    <PackageVersion>0.0.1</PackageVersion>
+    <PackageVersion>0.0.2</PackageVersion>
     <Description>Orchestra.Shell.Ribbon.Syncfusion library.</Description>
     <PackageTags>orc;orchestra;wpf;xaml;shell;ribbon;syncfusion</PackageTags>
   </PropertyGroup>
-  
+
   <PropertyGroup>
     <UseWpf>true</UseWpf>
     <UseWindowsForms>true</UseWindowsForms>
     <ExtrasEnableImplicitWpfReferences>true</ExtrasEnableImplicitWpfReferences>
     <ExtrasEnableImplicitWinFormsReferences>true</ExtrasEnableImplicitWinFormsReferences>
   </PropertyGroup>
-  
+
   <PropertyGroup>
    <LangVersion>preview</LangVersion>
    <Authors>wildgums, Tomislav Tustonic</Authors>
@@ -26,49 +26,79 @@
    <Version>1.0.0-alpha.1</Version>
    <Copyright>Copyright © WildGums 2010 - 2018, Tomislav Tustonic 2020</Copyright>
  </PropertyGroup>
-  
+
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net46|AnyCPU'">
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  
+
   <ItemGroup>
-    <PackageReference Include="Catel.Analyzers" Version="1.0.0">
+    <Compile Remove="Themes\SyncfusionRibbonShellTheme.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Catel.Analyzers" Version="1.2.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Catel.Core" Version="5.12.8" />
-    <PackageReference Include="Catel.Fody" Version="4.5.0">
+    <PackageReference Include="Catel.Core" Version="5.12.16" />
+    <PackageReference Include="Catel.Fody" Version="4.7.0">
       <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <!--<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>-->
     </PackageReference>
-    <PackageReference Include="Catel.MVVM" Version="5.12.8" />
+    <PackageReference Include="Catel.MVVM" Version="5.12.16" />
+    <PackageReference Include="Costura.Fody" Version="5.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <!--<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>-->
+    </PackageReference>
     <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="4.5.0">
       <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <!--<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>-->
     </PackageReference>
-    <PackageReference Include="MethodTimer.Fody" Version="3.1.2" />
-    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.19" />
-    <PackageReference Include="ModuleInit.Fody" Version="2.1.0" />
-    <PackageReference Include="Obsolete.Fody" Version="5.2.1" />
-    <PackageReference Include="Orc.Theming" Version="4.0.2" />
-    <PackageReference Include="Orchestra.Core" Version="6.0.2" />
-    <PackageReference Include="Syncfusion.Tools.WPF" Version="18.2.0.54" />
+    <PackageReference Include="MethodTimer.Fody" Version="3.2.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
+    <PackageReference Include="ModuleInit.Fody" Version="2.1.1" PrivateAssets="all" />
+    <PackageReference Include="Obsolete.Fody" Version="5.2.1" PrivateAssets="all" />
+    <PackageReference Include="Syncfusion.SfSkinManager.WPF" Version="19.1.0.67" />
+    <PackageReference Include="Syncfusion.Themes.FluentDark.WPF" Version="19.1.0.67" />
+    <PackageReference Include="Syncfusion.Themes.FluentLight.WPF" Version="19.1.0.67" />
+    <PackageReference Include="Syncfusion.Tools.WPF" Version="19.1.0.67" />
+    <PackageReference Include="Syncfusion.Shared.WPF" Version="19.1.0.67" />
+    <PackageReference Include="System.Security.Permissions" Version="5.0.0" />
   </ItemGroup>
-  
+
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net472'">
+    <PackageReference Include="Orchestra.Core" Version="6.1.1" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' OR '$(TargetFramework)' == 'net5.0-windows'">
+    <PackageReference Include="Orchestra.Core" Version="6.2.6" />
+	</ItemGroup>
+
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Themes\Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+    </Compile>
   </ItemGroup>
-  
+
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\ThirdPartyNotices\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="OBSOLETE\SyncfusionRibbonShellTheme.cs" />
   </ItemGroup>
 
 </Project>

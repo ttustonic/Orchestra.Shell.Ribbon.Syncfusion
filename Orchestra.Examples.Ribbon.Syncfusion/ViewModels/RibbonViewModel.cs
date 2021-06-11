@@ -83,9 +83,11 @@ namespace Orchestra.Examples.Ribbon.ViewModels
         /// </summary>
         private async Task OnOpenProjectExecuteAsync()
         {
-            if (await _selectDirectoryService.DetermineDirectoryAsync())
+            var determineDirectoryContext = new DetermineDirectoryContext();
+            var determineDirectoryResult = await _selectDirectoryService.DetermineDirectoryAsync(determineDirectoryContext);
+            if (determineDirectoryResult.Result)
             {
-                await _messageService.ShowAsync("You have chosen " + _selectDirectoryService.DirectoryName);
+                await _messageService.ShowAsync("You have chosen " + determineDirectoryResult.DirectoryName);
             }
         }
 
@@ -187,7 +189,7 @@ namespace Orchestra.Examples.Ribbon.ViewModels
 
         private void InitializeDemoData()
         {
-            if (_recentlyUsedItemsService.Items.Count() == 0)
+            if (_recentlyUsedItemsService.Items.Any())
             {
                 for (var i = 1; i < 4; i++)
                 {
@@ -197,7 +199,7 @@ namespace Orchestra.Examples.Ribbon.ViewModels
                 }
             }
 
-            if (_recentlyUsedItemsService.PinnedItems.Count() == 0)
+            if (_recentlyUsedItemsService.PinnedItems.Any())
             {
                 for (var i = 1; i < 4; i++)
                 {

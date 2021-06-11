@@ -1,20 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
 <PropertyGroup>
-    <TargetFrameworks>net462;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net472;netcoreapp3.1;net5.0-windows</TargetFrameworks>
     <AssemblyName>Orchestra.Examples.Ribbon.Syncfusion</AssemblyName>
     <RootNamespace>Orchestra.Examples.Ribbon</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
     <SonarQubeExclude>true</SonarQubeExclude>
   </PropertyGroup>
-  
+
 <PropertyGroup>
     <UseWpf>true</UseWpf>
     <UseWindowsForms>true</UseWindowsForms>
     <ExtrasEnableImplicitWpfReferences>true</ExtrasEnableImplicitWpfReferences>
     <ExtrasEnableImplicitWinFormsReferences>true</ExtrasEnableImplicitWinFormsReferences>
   </PropertyGroup>
-  
+
 <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <StartupObject />
@@ -23,20 +23,16 @@
     <Authors>ttustonic</Authors>
     <Company>ttustonic</Company>
   </PropertyGroup>
-  
+
   <ItemGroup>
-    <PackageReference Include="Catel.Fody" Version="4.5.0" PrivateAssets="all" />
-	<PackageReference Include="Catel.MVVM" Version="5.12.8" />	
-    <PackageReference Include="Fody" Version="6.2.4" PrivateAssets="all">
+    <PackageReference Include="Catel.Fody" Version="4.7.0" PrivateAssets="all" />
+    <PackageReference Include="Fody" Version="6.5.1" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Orc.Controls" Version="4.0.5" />
     <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="4.5.0" PrivateAssets="all" />
-    <PackageReference Include="ModuleInit.Fody" Version="2.1.0" PrivateAssets="all" />
+    <PackageReference Include="ModuleInit.Fody" Version="2.1.1" PrivateAssets="all" />
     <PackageReference Include="Obsolete.Fody" Version="5.2.1" PrivateAssets="all" />
-    <PackageReference Include="Orc.Theming" Version="4.0.2" />
-    <PackageReference Include="Syncfusion.SfRadialMenu.WPF" Version="18.2.0.54" />
-    <PackageReference Include="Syncfusion.Tools.WPF" Version="18.2.0.54" />
+    <PackageReference Include="Syncfusion.SfGauge.WPF" Version="19.1.0.67" />
   </ItemGroup>
 
     <ItemGroup>
@@ -46,7 +42,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Orchestra.Shell.Ribbon.Syncfusion\Orchestra.Shell.Ribbon.Syncfusion.csproj" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -54,14 +50,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-  
+
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>  
-  
+  </ItemGroup>
+
 <ItemGroup>
   <None Remove="licence.txt" />
   <None Remove="Resources\BlankPage32.png" />
@@ -72,6 +68,10 @@
   <None Remove="Resources\Copy16.png" />
   <None Remove="Resources\CoverPage32.png" />
   <None Remove="Resources\Cut16.png" />
+  <None Remove="Resources\Dashboard\CarDashboard.png" />
+  <None Remove="Resources\Dashboard\Fuel.png" />
+  <None Remove="Resources\Dashboard\Header.png" />
+  <None Remove="Resources\Dashboard\Pattern.png" />
   <None Remove="Resources\Exit.png" />
   <None Remove="Resources\FontColor16.png" />
   <None Remove="Resources\Fonts\fontawesome-webfont.ttf" />
@@ -110,7 +110,7 @@
   <None Remove="SampleImages\return.jpg" />
   <None Remove="SampleImages\start.png" />
 </ItemGroup>
-  
+
   <ItemGroup>
     <Resource Include="Resources\BlankPage32.png" />
     <Resource Include="Resources\Bold16.png" />
@@ -120,6 +120,10 @@
     <Resource Include="Resources\Copy16.png" />
     <Resource Include="Resources\CoverPage32.png" />
     <Resource Include="Resources\Cut16.png" />
+    <Resource Include="Resources\Dashboard\CarDashboard.png" />
+    <Resource Include="Resources\Dashboard\Fuel.png" />
+    <Resource Include="Resources\Dashboard\Header.png" />
+    <Resource Include="Resources\Dashboard\Pattern.png" />
     <Resource Include="Resources\Exit.png" />
     <Resource Include="Resources\FontColor16.png" />
     <Resource Include="Resources\Fonts\fontawesome-webfont.ttf" />
@@ -158,7 +162,7 @@
     <Resource Include="SampleImages\return.jpg" />
     <Resource Include="SampleImages\start.png" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>

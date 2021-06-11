@@ -7,25 +7,29 @@
                    xmlns:ribbonexample="clr-namespace:Orchestra.Examples.Ribbon"
                    xmlns:orchestra="http://schemas.wildgums.com/orchestra"
                    xmlns:orctheme="http://schemas.wildgums.com/orc/theming"
-                   xmlns:orccontrols="clr-namespace:Orc.Controls;assembly=Orc.Controls">
+                   xmlns:orccontrols="clr-namespace:Orc.Controls;assembly=Orc.Controls"
+                   xmlns:sfskin="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+                   >
+    <!---->
 
     <catel:UserControl.Resources>
         <sf:ColorToBrushConverter x:Key="colortobrushconverter"></sf:ColorToBrushConverter>
     </catel:UserControl.Resources>
 
     <Grid>
-        <sf:Ribbon BackStageHeader="File" 
-                           Grid.Row="0" 
-                           HorizontalAlignment="Stretch" 
-                           VerticalAlignment="Top" 
+        <sf:Ribbon BackStageHeader="File"
+                           Grid.Row="0"
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Top"
                            Name="ribbon">
-            <!--<sf:Ribbon.QuickAccessToolBar>
+            <sf:Ribbon.QuickAccessToolBar>
                 <sf:QuickAccessToolBar>
                     <sf:RibbonButton SizeForm="ExtraSmall" SmallIcon="/Resources/Save16.png"/>
                     <sf:RibbonButton SizeForm="ExtraSmall" SmallIcon="/Resources/Bold16.png"/>
                     <sf:RibbonButton SizeForm="ExtraSmall" SmallIcon="/Resources/Copy16.png"/>
                 </sf:QuickAccessToolBar>
-            </sf:Ribbon.QuickAccessToolBar>-->
+            </sf:Ribbon.QuickAccessToolBar>
+
             <sf:Ribbon.BackStage>
                 <sf:Backstage x:Name="RibbonBackStage" sf:Ribbon.KeyTip="B">
                     <sf:BackStageCommandButton Header="Save"  sf:Ribbon.KeyTip="S" ></sf:BackStageCommandButton>
@@ -57,7 +61,7 @@
                                     <ColumnDefinition Width="100"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <sf:ButtonAdv SizeMode="Large" IconHeight="48" IconWidth="48" LargeIcon="/Resources/protect.png" Label="Protect Document" sf:SkinStorage.VisualStyle="Metro" />
+                                <sf:ButtonAdv SizeMode="Large" IconHeight="48" IconWidth="48" LargeIcon="/Resources/protect.png" Label="Protect Document"/>
                                 <Grid Margin="20,20,0,0" Grid.Column="1">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"></RowDefinition>
@@ -74,7 +78,7 @@
                                     <ColumnDefinition Width="100"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <sf:ButtonAdv SizeMode="Large" IconHeight="48" IconWidth="48" LargeIcon="/Resources/cancel.png" Label="Close Backstage" sf:SkinStorage.VisualStyle="Metro" />
+                                <sf:ButtonAdv SizeMode="Large" IconHeight="48" IconWidth="48" LargeIcon="/Resources/cancel.png" Label="Close Backstage"/>
 
                                 <Grid Margin="20,20,0,0" Grid.Column="1">
                                     <Grid.RowDefinitions>
@@ -96,12 +100,12 @@
                                 </Grid.RowDefinitions>
                                 <TextBlock Text="Backstage Color" FontWeight="Bold"/>
                                 <TextBlock Text="Click here to change the Backstage color." Margin="0,10,0,0" Grid.Row="1"></TextBlock>
-                                <Grid Grid.Row="2" Margin="3,20,20,20" Width="200" HorizontalAlignment="Left" 
+                                <Grid Grid.Row="2" Margin="3,20,20,20" Width="200" HorizontalAlignment="Left"
                                       >
-                                    <sf:ColorPickerPalette x:Name="backColor" 
-                                                                   IsExpanded="True" Width="150" Margin="10" 
-                                                                   AutomaticColor="Blue" 
-                                                                   MoreColorOptionVisibility="Collapsed" 
+                                    <sf:ColorPickerPalette x:Name="backColor"
+                                                                   IsExpanded="True" Width="150" Margin="10"
+                                                                   AutomaticColor="Blue"
+                                                                   MoreColorOptionVisibility="Collapsed"
                                                                    RecentlyUsedPanelVisibility="Collapsed"/>
                                 </Grid>
                             </Grid>
@@ -131,7 +135,7 @@
                                         <RowDefinition/>
                                     </Grid.RowDefinitions>
                                     <TextBlock Text="To browser for a File, click Open" ></TextBlock>
-                                    <sf:ButtonAdv Label="Open Folder" SizeMode="Large" HorizontalAlignment="Left" IconWidth="32" Margin="0,10,0,10"  LargeIcon="/Resources/Open32.png" Width="100" Grid.Row="1" sf:SkinStorage.VisualStyle="Metro"/>
+                                    <sf:ButtonAdv Label="Open Folder" SizeMode="Large" HorizontalAlignment="Left" IconWidth="32" Margin="0,10,0,10"  LargeIcon="/Resources/Open32.png" Width="100" Grid.Row="1"/>
                                 </Grid>
                                 <Grid Grid.Row="2">
                                     <Grid.RowDefinitions>
@@ -139,8 +143,8 @@
                                         <RowDefinition Height="70"></RowDefinition>
                                     </Grid.RowDefinitions>
                                     <sf:RibbonCheckBox Content="Cancel Backstage Closing" sf:Ribbon.KeyTip="Q" x:Name="BackStageClosingCheckBox2"></sf:RibbonCheckBox>
-                                    <sf:ButtonAdv Grid.Row="1" HorizontalAlignment="Left" Height="30" IsMultiLine="False" 
-                                                          IconHeight="0" Label="Close Backstage" sf:SkinStorage.VisualStyle="Metro"/>
+                                    <sf:ButtonAdv Grid.Row="1" HorizontalAlignment="Left" Height="30" IsMultiLine="False"
+                                                          IconHeight="0" Label="Close Backstage"/>
                                 </Grid>
                             </Grid>
                             <Border Width="2" Background="LightGray" Grid.Column="1"></Border>
@@ -202,12 +206,10 @@
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
-                                    <sf:ButtonAdv Label="Online Help" SizeMode="Large" 
-                                                          HorizontalAlignment="Left" IconWidth="48" IconHeight="48" Margin="5"  
-                                                          LargeIcon="/SampleImages/help.png" 
+                                    <sf:ButtonAdv Label="Online Help" SizeMode="Large"
+                                                          HorizontalAlignment="Left" IconWidth="48" IconHeight="48" Margin="5"
+                                                          LargeIcon="/SampleImages/help.png"
                                                           />
-                                    <!--sf:SkinStorage.VisualStyle="Metro"-->
-
                                     <!--<Button Width="87" Height="80" Margin="5" BorderBrush="#FFA1A2A4" BorderThickness="1">
                                             <Button.Background>
                                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -232,10 +234,10 @@
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
-                                    <sf:ButtonAdv Label="Getting Started" SizeMode="Large" HorizontalAlignment="Left" IconWidth="48" IconHeight="48" Margin="5"  LargeIcon="/SampleImages/start.png" sf:SkinStorage.VisualStyle="Metro"/>
+                                    <sf:ButtonAdv Label="Getting Started" SizeMode="Large" HorizontalAlignment="Left" IconWidth="48" IconHeight="48" Margin="5"  LargeIcon="/SampleImages/start.png"/>
 
                                     <!--<Button Width="87" Height="80" Margin="5" BorderBrush="#FFA1A2A4" BorderThickness="1">
-                                            
+
                                             <Button.Background>
                                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                                     <GradientStop Color="#FFEEF0F2" Offset="1"/>
@@ -261,7 +263,7 @@
                                     <RowDefinition Height="Auto"></RowDefinition>
                                     <RowDefinition Height="*"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <Button VerticalAlignment="Top" Margin="20 10" HorizontalAlignment="Center" 
+                                <Button VerticalAlignment="Top" Margin="20 10" HorizontalAlignment="Center"
                                         >
                                     <Button.Style>
                                         <Style TargetType="Button">
@@ -295,7 +297,7 @@
                                         <RowDefinition Height="70"></RowDefinition>
                                     </Grid.RowDefinitions>
                                     <sf:RibbonCheckBox Content="Cancel Backstage Closing" sf:Ribbon.KeyTip="Z" x:Name="BackStageClosingCheckBox1"></sf:RibbonCheckBox>
-                                    <sf:ButtonAdv Grid.Row="1" HorizontalAlignment="Left" Height="30" IsMultiLine="False" IconHeight="0" Label="Close Backstage" sf:SkinStorage.VisualStyle="Metro"/>
+                                    <sf:ButtonAdv Grid.Row="1" HorizontalAlignment="Left" Height="30" IsMultiLine="False" IconHeight="0" Label="Close Backstage"/>
 
                                 </Grid>
                             </Grid>
@@ -328,14 +330,14 @@
                                             <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
 
-                                        <orchestra:RibbonBackstageTabItemHeader Grid.Row="0" HeaderText="Recent documents" 
+                                        <orchestra:RibbonBackstageTabItemHeader Grid.Row="0" HeaderText="Recent documents"
                                                                                  HeaderTextStyleKey="RibbonBackstageSubHeaderLabelStyle"
                                                                                  Icon="/Resources/Images/open.png" />
 
                                         <ItemsControl Grid.Row="1" ItemsSource="{Binding PinnedItems}" Visibility="{Binding PinnedItems, Converter={catel:CollectionToCollapsingVisibilityConverter}}">
                                             <ItemsControl.ItemTemplate>
                                                 <DataTemplate>
-                                                    <orchestra:RibbonBackstageButton Command="{Binding ElementName=backstageTabControl, Path=DataContext.OpenRecentlyUsedItem}" 
+                                                    <orchestra:RibbonBackstageButton Command="{Binding ElementName=backstageTabControl, Path=DataContext.OpenRecentlyUsedItem}"
                                                                                      CommandParameter="{Binding Name}" ToolTip="{Binding Name}" ShowBorder="False">
                                                         <Grid>
                                                             <Grid.ColumnDefinitions>
@@ -345,7 +347,7 @@
                                                                 <ColumnDefinition Width="6" />
                                                             </Grid.ColumnDefinitions>
 
-                                                            <orchestra:RibbonBackstageButton Grid.Column="0" Command="{Binding ElementName=backstageTabControl, Path=DataContext.UnpinItem}" CommandParameter="{Binding Name}" 
+                                                            <orchestra:RibbonBackstageButton Grid.Column="0" Command="{Binding ElementName=backstageTabControl, Path=DataContext.UnpinItem}" CommandParameter="{Binding Name}"
                                                                                              ShowBorder="false" Width="24" Height="24" Style="{StaticResource AutoHidingRibbonBackstageButtonStyle}">
                                                                 <Image Source="pack://application:,,,/Orchestra.Core;component/Resources/Images/Pinned.png" />
                                                             </orchestra:RibbonBackstageButton>
@@ -362,12 +364,14 @@
                                             </ItemsControl.ItemTemplate>
                                         </ItemsControl>
 
-                                        <Border Grid.Row="2" Height="1" Style="{StaticResource RibbonBorderStyle}" Visibility="{Binding PinnedItems, Converter={catel:CollectionToCollapsingVisibilityConverter}}" />
+                                        <Border Grid.Row="2" Height="1"
+                                                Visibility="{Binding PinnedItems, Converter={catel:CollectionToCollapsingVisibilityConverter}}" />
+                                        <!--Style="{StaticResource RibbonBorderStyle}"-->
 
                                         <ItemsControl Grid.Row="3" ItemsSource="{Binding RecentlyUsedItems}" Visibility="{Binding RecentlyUsedItems, Converter={catel:CollectionToCollapsingVisibilityConverter}}">
                                             <ItemsControl.ItemTemplate>
                                                 <DataTemplate>
-                                                    <orchestra:RibbonBackstageButton Command="{Binding ElementName=backstageTabControl, Path=DataContext.OpenRecentlyUsedItem}" 
+                                                    <orchestra:RibbonBackstageButton Command="{Binding ElementName=backstageTabControl, Path=DataContext.OpenRecentlyUsedItem}"
                                                                                      CommandParameter="{Binding Name}" ToolTip="{Binding Name}" ShowBorder="False">
                                                         <Grid>
                                                             <Grid.ColumnDefinitions>
@@ -377,7 +381,7 @@
                                                                 <ColumnDefinition Width="6" />
                                                             </Grid.ColumnDefinitions>
 
-                                                            <orchestra:RibbonBackstageButton Grid.Column="0" Command="{Binding ElementName=backstageTabControl, Path=DataContext.PinItem}" CommandParameter="{Binding Name}" 
+                                                            <orchestra:RibbonBackstageButton Grid.Column="0" Command="{Binding ElementName=backstageTabControl, Path=DataContext.PinItem}" CommandParameter="{Binding Name}"
                                                                                              ShowBorder="false" Width="24" Height="24" Style="{StaticResource AutoHidingRibbonBackstageButtonStyle}">
                                                                 <Image Source="pack://application:,,,/Orchestra.Core;component/Resources/Images/Unpinned.png" />
                                                             </orchestra:RibbonBackstageButton>
@@ -403,12 +407,12 @@
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
 
-                                        <orchestra:RibbonBackstageTabItemHeader Grid.Row="0" HeaderText="Computer" 
+                                        <orchestra:RibbonBackstageTabItemHeader Grid.Row="0" HeaderText="Computer"
                                                                                  HeaderTextStyleKey="RibbonBackstageSubHeaderLabelStyle" />
 
-                                        <sf:BackStageCommandButton Grid.Row="1" Header="Open..." 
-                                                                   LargeIcon="pack://application:,,,/Orchestra.Examples.Ribbon.Syncfusion;component/Resources/Images/open.png" 
-                                               Command="{catel:CommandManagerBinding File.Open}" Style="{DynamicResource ButtonBackstageStyle}" 
+                                        <sf:BackStageCommandButton Grid.Row="1" Header="Open..."
+                                                                   LargeIcon="pack://application:,,,/Orchestra.Examples.Ribbon.Syncfusion;component/Resources/Images/open.png"
+                                               Command="{catel:CommandManagerBinding File.Open}" Style="{DynamicResource ButtonBackstageStyle}"
                                                HorizontalAlignment="Left" />
                                     </Grid>
                                 </orchestra:RibbonBackstageTabItem>
@@ -417,21 +421,23 @@
                         </Grid>
                     </sf:BackstageTabItem>
 
-                    <sf:BackStageCommandButton Header="Save to image..." 
-                                               Icon="pack://application:,,,/Orchestra.Examples.Ribbon.Syncfusion;component/Resources/Images/save.png" 
+                    <sf:BackStageCommandButton Header="Save to image..."
+                                               Icon="pack://application:,,,/Orchestra.Examples.Ribbon.Syncfusion;component/Resources/Images/save.png"
                                                Command="{catel:CommandManagerBinding File.SaveToImage}" />
-                    <sf:BackStageCommandButton Header="Print..." 
-                                               Icon="pack://application:,,,/Orchestra.Examples.Ribbon.Syncfusion;component/Resources/Images/print.png" 
+                    <sf:BackStageCommandButton Header="Print..."
+                                               Icon="pack://application:,,,/Orchestra.Examples.Ribbon.Syncfusion;component/Resources/Images/print.png"
                                                Command="{catel:CommandManagerBinding File.Print}" />
                     <sf:BackStageSeparator />
-                    <sf:BackStageCommandButton Header="Exit" 
-                                               Icon="pack://application:,,,/Orchestra.Examples.Ribbon.Syncfusion;component/Resources/Images/exit.png" 
+                    <sf:BackStageCommandButton Header="Exit"
+                                               Icon="pack://application:,,,/Orchestra.Examples.Ribbon.Syncfusion;component/Resources/Images/exit.png"
                                                Command="{catel:CommandManagerBinding Application.Exit}" />
                 </sf:Backstage>
             </sf:Ribbon.BackStage>
+            <!--
+            Hmm, ovo smeta?
             <sf:Ribbon.ApplicationMenu>
                 <sf:ApplicationMenu />
-            </sf:Ribbon.ApplicationMenu>
+            </sf:Ribbon.ApplicationMenu>-->
 
             <sf:RibbonTab Caption="Home" >
 
@@ -477,8 +483,7 @@
                             <RowDefinition Height="40"></RowDefinition>
                         </Grid.RowDefinitions>
                         <sf:RibbonCheckBox Content="Cancel Backstage Opening" x:Name="BackStageOpeningCheckBox"></sf:RibbonCheckBox>
-                        <sf:ButtonAdv Grid.Row="1" IconHeight="0" IsMultiLine="False" Height="30" x:Name="OpenBackStage" Label="Open Backstage" sf:SkinStorage.VisualStyle="Metro" />
-
+                        <sf:ButtonAdv Grid.Row="1" IconHeight="0" IsMultiLine="False" Height="30" x:Name="OpenBackStage" Label="Open Backstage"/>
                     </Grid>
                 </sf:RibbonBar>
             </sf:RibbonTab>
@@ -506,7 +511,7 @@
                             <RowDefinition Height="40"></RowDefinition>
                         </Grid.RowDefinitions>
                         <sf:RibbonCheckBox Content="Cancel Backstage Opening" x:Name="BackStageOpeningCheckBox1"></sf:RibbonCheckBox>
-                        <sf:ButtonAdv Grid.Row="1" IconHeight="0" IsMultiLine="False" Height="30" x:Name="OpenBackStage1" Label="Open Backstage" sf:SkinStorage.VisualStyle="Metro" />
+                        <sf:ButtonAdv Grid.Row="1" IconHeight="0" IsMultiLine="False" Height="30" x:Name="OpenBackStage1" Label="Open Backstage"/>
                     </Grid>
                 </sf:RibbonBar>
             </sf:RibbonTab>
@@ -530,13 +535,13 @@
                                      Command="{catel:CommandManagerBinding Demo.LongOperation}"
                                      />
 
-                    <sf:SplitButton Label="Message box demo" SizeForm="Large" 
+                    <sf:SplitButton Label="Message box demo" SizeForm="Large"
                                     SmallIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Send}}"
                                     LargeIcon="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Send}}"
                                     >
                         <sf:DropDownMenuGroup>
                             <sf:DropDownMenuItem Header="Ok"
-                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
+                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}"
                                                  CommandParameter="{x:Static services:MessageButton.OK}">
                                 <sf:DropDownMenuItem.Icon>
                                     <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Send}}"/>
@@ -544,7 +549,7 @@
                             </sf:DropDownMenuItem>
 
                             <sf:DropDownMenuItem Header="Ok/Cancel"
-                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
+                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}"
                                                  CommandParameter="{x:Static services:MessageButton.YesNo}">
                                 <sf:DropDownMenuItem.Icon>
                                     <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Send}}"/>
@@ -552,15 +557,15 @@
                             </sf:DropDownMenuItem>
 
                             <sf:DropDownMenuItem Header="Yes/No"
-                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
+                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}"
                                                  CommandParameter="{x:Static services:MessageButton.OK}">
                                 <sf:DropDownMenuItem.Icon>
                                     <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Send}}"/>
                                 </sf:DropDownMenuItem.Icon>
                             </sf:DropDownMenuItem>
 
-                            <sf:DropDownMenuItem Header="Yes/No/Cancel" 
-                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
+                            <sf:DropDownMenuItem Header="Yes/No/Cancel"
+                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}"
                                                  CommandParameter="{x:Static services:MessageButton.YesNoCancel}">
                                 <sf:DropDownMenuItem.Icon>
                                     <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Send}}"/>
@@ -568,7 +573,7 @@
                             </sf:DropDownMenuItem>
 
                             <sf:DropDownMenuItem Header="Icons - Stop"
-                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
+                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}"
                                                  CommandParameter="{x:Static services:MessageImage.Stop}">
                                 <sf:DropDownMenuItem.Icon>
                                     <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Stop}}"/>
@@ -576,7 +581,7 @@
                             </sf:DropDownMenuItem>
 
                             <sf:DropDownMenuItem Header="Icons - Exclamation"
-                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
+                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}"
                                                  CommandParameter="{x:Static services:MessageImage.Exclamation}">
                                 <sf:DropDownMenuItem.Icon>
                                     <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Exclamation }}"/>
@@ -584,7 +589,7 @@
                             </sf:DropDownMenuItem>
 
                             <sf:DropDownMenuItem Header="Icons - Error"
-                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
+                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}"
                                                  CommandParameter="{x:Static services:MessageImage.Error}">
                                 <sf:DropDownMenuItem.Icon>
                                     <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.TimesCircle  }}"/>
@@ -592,7 +597,7 @@
                             </sf:DropDownMenuItem>
 
                             <sf:DropDownMenuItem Header="Icons - Warning"
-                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
+                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}"
                                                  CommandParameter="{x:Static services:MessageImage.Warning}">
                                 <sf:DropDownMenuItem.Icon>
                                     <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Warning}}"/>
@@ -600,7 +605,7 @@
                             </sf:DropDownMenuItem>
 
                             <sf:DropDownMenuItem Header="Icons - Warning"
-                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
+                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}"
                                                  CommandParameter="{x:Static services:MessageImage.Information}">
                                 <sf:DropDownMenuItem.Icon>
                                     <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Info}}"/>
@@ -608,7 +613,7 @@
                             </sf:DropDownMenuItem>
 
                             <sf:DropDownMenuItem Header="Icons - Question"
-                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}" 
+                                                 Command="{catel:CommandManagerBinding Demo.ShowMessageBox}"
                                                  CommandParameter="{x:Static services:MessageImage.Question}">
                                 <sf:DropDownMenuItem.Icon>
                                     <Image Source="{orctheme:FontImage {x:Static ribbonexample:FontAwesome.Question}}"/>
@@ -650,13 +655,13 @@
                                                    IsChecked="{Binding Settings.IsShowVerticalGridLines}"/>
                         </sf:DropDownMenuGroup>
                         <!--<StackPanel HorizontalAlignment="Stretch">
-                            <sf:RibbonToggleButton Label="Windows" SizeMode="Normal" 
+                            <sf:RibbonToggleButton Label="Windows" SizeMode="Normal"
                                                    LargeIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Windows}}"
                                                    SmallIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Windows}}"
                                                    IsCheckable="True"
                                                    IsChecked="{Binding Settings.IsShowVerticalGridLines}"/>
 
-                            <sf:RibbonToggleButton Label="Apple" SizeMode="Normal" 
+                            <sf:RibbonToggleButton Label="Apple" SizeMode="Normal"
                                                    LargeIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Apple}}"
                                                    SmallIcon="{orccontrols:FontImage {x:Static ribbonexample:FontAwesome.Apple}}"
                                                    IsCheckable="True"
@@ -674,7 +679,7 @@
                             <RadioButton />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Slider Height="66" Orientation="Vertical" Margin="5,0,0,0" Minimum="150" Maximum="800" 
+                            <Slider Height="66" Orientation="Vertical" Margin="5,0,0,0" Minimum="150" Maximum="800"
                                 SmallChange="1" LargeChange="5" AutoToolTipPrecision="0" AutoToolTipPlacement="BottomRight"/>
                         </StackPanel>
                     </StackPanel>

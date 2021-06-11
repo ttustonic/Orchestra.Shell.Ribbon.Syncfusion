@@ -1,4 +1,4 @@
-﻿namespace Orchestra.Examples.Views
+﻿namespace Orchestra.Examples.Ribbon.Views
 {
     public sealed partial class ControlsView
     {
